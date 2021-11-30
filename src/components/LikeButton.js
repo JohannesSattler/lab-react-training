@@ -1,16 +1,27 @@
-import React from 'react'
+import {useState, useEffect} from 'react'
 
 function LikeButton() {
-    const [number, setNumber] = React.useState(0)
+    const [number, setNumber] = useState(0)
+    const [index, setIndex] = useState(0)
     const backgrounds = ['purple','blue','green','yellow','orange','red']
-    const currentBckgrd = Math.floor(Math.random() * backgrounds.length)
+
+    useEffect(() => {
+        if(index >= backgrounds.length) {
+            setIndex(0)
+        }
+    }, [index, backgrounds])
+
+    const handleLikeClick = () => {
+        setIndex(index + 1)
+        setNumber(number + 1)
+    }
 
     return (
         <>
             <button 
                 id="counterbut" 
-                style={{backgroundColor: backgrounds[currentBckgrd], height: '50px', width: '100px'}} 
-                onClick={() => setNumber(number+1)}
+                style={{backgroundColor: backgrounds[index], height: '50px', width: '100px'}} 
+                onClick={handleLikeClick}
             >
                 {number} likes
             </button>
