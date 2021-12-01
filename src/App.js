@@ -16,6 +16,7 @@ import Carousel from './components/Carousel';
 import NumbersTable from './components/NumbersTable';
 import Facebook from './components/Facebook';
 import Humans from './components/Humans';
+import SignupPage from './components/SignupPage';
 
 function App() {
   return (
@@ -128,16 +129,27 @@ function App() {
           'https://randomuser.me/api/portraits/men/2.jpg'
         ]}
       />
+      <br />
 
       <h1>NumbersTable</h1>
       <NumbersTable limit={10}/>
+      <br />
 
       <h1>Facebook</h1>
       <Facebook/>
-      
+      <br />
+
       <h1>Class activity</h1>
       <Humans/>
+      <br />
 
+      <h1>Sign up page</h1>
+      <SignupPage/>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
   );
 }

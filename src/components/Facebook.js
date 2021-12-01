@@ -40,6 +40,7 @@ function Facebook() {
                         return <option key={country}>{country}</option>
                     })
                 }
+                
             </select>
             {profiles.map((profile, index) => {
                 if(!profile.highlight) {
@@ -56,6 +57,7 @@ function Facebook() {
                             <img src={profile.img} alt="" style={{border: '2px solid black', height: '50px'}}/>
                             <h3>Name: {profile.firstName} {profile.lastName}</h3>
                             <p>Country: {profile.country}</p>
+                            
                             <p>Student: {profile.isStudent ? 'Yes' : 'No'}</p>
                         </div>
                     )
